@@ -1,0 +1,35 @@
+/home/rsawhney/Desktop/HPC/
+
+/home/rsawhney/Desktop/HPC/pdtoolkit-3.22  --pdt
+/home/rsawhney/Desktop/HPC/papi-5.4.3  --papi
+
+
+
+./configure -c++=g++ -cc=gcc -fortran=gfortran -openmp -papi=/home/rsawhney/Desktop/HPC/papi-5.4.3 -bfd=download -unwind=download -pdt=/home/rsawhney/Desktop/HPC/pdtoolkit-3.22
+
+make install
+
+export PATH=$PATH:/home/rsawhney/Desktop/HPC/tau-2.25.1/x86_64/bin   --path
+export TAU_MAKEFILE=/home/rsawhney/Desktop/HPC/tau-2.25.1/x86_64/lib/Makefile.tau-papi-pdt-openmp
+
+
+gcc /home/rsawhney/Desktop/HPC/sample.c -o sampleres
+tau_exec ./sampleres
+
+pprof
+Reading Profile files in profile.*
+
+NODE 0;CONTEXT 0;THREAD 0:
+---------------------------------------------------------------------------------------
+%Time    Exclusive    Inclusive       #Call      #Subrs  Inclusive Name
+              msec   total msec                          usec/call 
+---------------------------------------------------------------------------------------
+100.0       26,557       26,557           1           0   26557720 .TAU application
+
+
+papi_avail
+export COUNTER1=PAPI_FP_OPS 
+export COUNTER2=PAPI_REF_CYC
+export COUNTER3=PAPI_L1_DCH
+setenv TAU_METRICS PAPI_FP_OPS:\:PAPI_L1_DCM
+export TAU_OPTIONS=PAPI_FP_OPS
