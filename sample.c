@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int sample_fnc(double n,double result)
+int sample_fnc2(double n,double result)
 {
 	double i,j;
 	for(i=0;i<n;i++)
@@ -21,6 +21,6 @@ int main(void)
   n=1e5;
   result = 0;
 
-  sample_fnc(n,result);
+  sample_fnc2(n,result);
   return 0;
 }
