@@ -1,0 +1,4 @@
+1 templated_functions_MULTI_PAPI_TOT_CYC
+# Name Calls Subrs Excl Incl ProfileCalls # <metadata><attribute><name>Metric Name</name><value>PAPI_TOT_CYC</value></attribute></metadata>
+".TAU application" 1 0 34683 34683 0 GROUP="TAU_USER" 
+0 aggregates
