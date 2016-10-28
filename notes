@@ -9,7 +9,7 @@
 
 make install
 
-export PATH=$PATH:/home/rsawhney/Desktop/HPC/tau-2.25.1/x86_64/bin   --path
+   --path
 export TAU_MAKEFILE=/home/rsawhney/Desktop/HPC/tau-2.25.1/x86_64/lib/Makefile.tau-papi-pdt-openmp
 
 
@@ -48,7 +48,7 @@ salloc -N 1 -p debug -L SCRATCH
 ediSONhpc@OR
 
 export TAU_METRICS=TIME,PAPI_L1_DCM
-rsawhney@rs-ubuntu:~/Desktop/HPC/tau-2.25.1$ export PATH=$PATH:/home/rsawhney/Desktop/HPC/tau-2.25.1/x86_64/bin
+rsawhney@rs-ubuntu:~/Desktop/HPC/tau-2.25.1$ 
 rsawhney@rs-ubuntu:~/Desktop/HPC/tau-2.25.1$ export TAU_MAKEFILE=/home/rsawhney/Desktop/HPC/tau-2.25.1/x86_64/lib/Makefile.tau-papi-pdt-openmp
 rsawhney@rs-ubuntu:~/Desktop/HPC/tau-2.25.1$ gcc -g /home/rsawhney/Desktop/HPC/sample.c -o sampleres
 rsawhney@rs-ubuntu:~/Desktop/HPC/tau-2.25.1$ export TAU_METRICS=TIME,PAPI_L1_DCM
@@ -120,3 +120,22 @@ srun -n 1 tau_exec -T ompt,mpi,papi -ompt -ebs ./picsar
 
 paraprof --pack openmp_test.ppk // packs all profiles (profile.*) into the specified .ppk file
 paraprof openmp_test.ppk //run paraprof
+
+----
+tau directory on edison
+export TAU_DIR=/project/projectdirs/acts/TAU/edison/tau-2.25.1/craycnl
+
+/project/projectdirs/acts/TAU/edison/tau-2.25.1/tools/src/perfexplorer/examples/
+
+------------------------------------------
+./configure -c++=g++ -cc=gcc -fortran=gfortran -openmp -mpi -papi=/home/rsawhney/Desktop/HPC/papi-5.4.3 -bfd=download -unwind=download -pdt=/home/rsawhney/Desktop/HPC/pdtoolkit-3.22 -ompt=download
+
+ ./configure -c++=g++ -cc=gcc -fortran=gfortran -papi=/home/rsawhney/Desktop/HPC/papi-5.4.3 -bfd=download -unwind=download -pdt=/home/rsawhney/Desktop/HPC/pdtoolkit-3.22 -ompt=download
+
+ ./configure -papi=/home/rsawhney/Desktop/HPC/papi-5.4.3 -pdt=/home/rsawhney/Desktop/HPC/pdtoolkit-3.22 -bfd=download -unwind=download -serial
+
+ ./configure -c++=g++ -cc=gcc -fortran=gfortran -papi=/home/rsawhney/Desktop/HPC/papi-5.4.3 -mpi -bfd=download -unwind=download -pdt=/home/rsawhney/Desktop/HPC/pdtoolkit-3.22
+
+ -----
+***FP_INEFFICIENT2 metrics
+ ((PAPI_FP_INS/PAPI_TOT_INS)*(PAPI_RES_STL/PAPI_TOT_CYC))*(PAPI_TOT_CYC/META_CPU_HZ) 
