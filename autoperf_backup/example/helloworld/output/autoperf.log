@@ -1,0 +1,132 @@
+# ********** EXPERIMENT START **********
+# 
+# Name     : helloworld
+# Platform : generic
+# Tool     : tau
+# Analyses : ['metrics']
+# Rootdir  : /home/rsawhney/Desktop/HPC/autoperf/example/helloworld/output
+# MPI      : False
+# CUPTI    : False
+# Instance : None
+# LogLevel : DEBUG
+# Queue    : serial
+# 
+# Using TAU binding: papi,pdt,serial
+# Run the experiment
+function run-2016-10-15-15-22-34-663140 () {
+    cd /home/rsawhney/Desktop/HPC/autoperf/example/helloworld/output
+
+    # Nothing to link, bypass
+
+    # Nothing to copy, bypass
+
+    # No builder found, bypass
+
+    # Partitioning the metrics:
+    #    1: PAPI_TOT_INS:PAPI_TOT_CYC
+
+    # Populating data directories
+    mkdir -p 2016-10-15-15-22-34-663140/profiles
+    mkdir -p 2016-10-15-15-22-34-663140/.iter-00/profiles
+    ln -s .iter-00/job.log 2016-10-15-15-22-34-663140/job-00.log
+    ln -s .iter-00/.job.stat 2016-10-15-15-22-34-663140/.job-helloworld-00.stat
+
+    # Running experiment, iteration 1 of 1
+    # Application command:
+    #   Original: ../helloworld 
+    #   ToolWrap: tau_exec -T papi,pdt,serial -ebs -ebs_period=10000 -ebs_source=TIME ../helloworld 
+    #   Final   : tau_exec -T papi,pdt,serial -ebs -ebs_period=10000 -ebs_source=TIME ../helloworld
+    # Populating the serial job script
+    # Running the serial job script
+    ./2016-10-15-15-22-34-663140/.iter-00/job.sh
+
+
+    cd /home/rsawhney/Desktop/HPC/autoperf/example/helloworld
+}
+# 
+# ********** EXPERIMENT END   **********
+
+# ********** EXPERIMENT START **********
+# 
+# Name     : helloworld
+# Platform : generic
+# Tool     : tau
+# Analyses : ['metrics']
+# Rootdir  : /home/rsawhney/Desktop/HPC/autoperf/example/helloworld/output
+# MPI      : False
+# CUPTI    : False
+# Instance : 2016-10-15-15-22-34-663140
+# LogLevel : DEBUG
+# Queue    : serial
+# 
+# Using TAU binding: papi,pdt,serial
+# Analyze the experiment
+function analyze-2016-10-15-15-22-34-663140 () {
+    cd /home/rsawhney/Desktop/HPC/autoperf/example/helloworld/output
+
+    # Aggregating all collected data
+    ln -s ../.iter-00/profiles/MULTI__TIME 2016-10-15-15-22-34-663140/profiles/MULTI__TIME
+    ln -s ../.iter-00/profiles/MULTI__PAPI_TOT_CYC 2016-10-15-15-22-34-663140/profiles/MULTI__PAPI_TOT_CYC
+    ln -s ../.iter-00/profiles/MULTI__PAPI_TOT_INS 2016-10-15-15-22-34-663140/profiles/MULTI__PAPI_TOT_INS
+
+    # Pack collected data to TAU .ppk package
+    /home/rsawhney/Desktop/HPC/tau-2.25.1/x86_64/bin/paraprof --pack 2016-10-15-15-22-34-663140/data.ppk 2016-10-15-15-22-34-663140/profiles
+    # Loading collected data to TAUdb:
+    # Populating a helper script (2016-10-15-15-22-34-663140/taudb_loadtrial.py) from the template (taudb_loadtrial.py)
+    # Running the helper script (2016-10-15-15-22-34-663140/taudb_loadtrial.py)
+    2016-10-15-15-22-34-663140/taudb_loadtrial.py
+    # Running the analyses:
+
+    cd /home/rsawhney/Desktop/HPC/autoperf/example/helloworld
+}
+# 
+# ********** EXPERIMENT END   **********
+
+# ********** EXPERIMENT START **********
+# 
+# Name     : helloworld
+# Platform : generic
+# Tool     : tau
+# Analyses : ['metrics']
+# Rootdir  : /home/rsawhney/Desktop/HPC/autoperf/example/helloworld/output
+# MPI      : False
+# CUPTI    : False
+# Instance : None
+# LogLevel : DEBUG
+# Queue    : serial
+# 
+# Using TAU binding: papi,pdt,serial
+# Run the experiment
+function run-2016-11-09-23-11-32-445632 () {
+    cd /home/rsawhney/Desktop/HPC/autoperf/example/helloworld/output
+
+    # Nothing to link, bypass
+
+    # Nothing to copy, bypass
+
+    # No builder found, bypass
+
+    # Partitioning the metrics:
+    #    1: PAPI_TOT_INS:PAPI_TOT_CYC
+
+    # Populating data directories
+    mkdir -p 2016-11-09-23-11-32-445632/profiles
+    mkdir -p 2016-11-09-23-11-32-445632/.iter-00/profiles
+    ln -s .iter-00/job.log 2016-11-09-23-11-32-445632/job-00.log
+    ln -s .iter-00/.job.stat 2016-11-09-23-11-32-445632/.job-helloworld-00.stat
+
+    # Running experiment, iteration 1 of 1
+    # Application command:
+    #   Original: ../helloworld 
+    #   ToolWrap: tau_exec -T papi,pdt,serial -ebs -ebs_period=10000 -ebs_source=TIME ../helloworld 
+    #   Final   : tau_exec -T papi,pdt,serial -ebs -ebs_period=10000 -ebs_source=TIME ../helloworld
+    # Populating the serial job script
+    # Running the serial job script
+    ./2016-11-09-23-11-32-445632/.iter-00/job.sh
+
+
+    cd /home/rsawhney/Desktop/HPC/autoperf/example/helloworld
+}
+# 
+# ********** EXPERIMENT END   **********
+
