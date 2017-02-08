@@ -20,7 +20,7 @@ on. To work on ACISS, set it as "aciss".::
   ...
   ...
 
-Another predefined platform is named "generic". As the name implies,
+Another predefined platfomr is named "generic". As the name implies,
 it makes no assumption to the software/hardware environment.
 
 [Experiments].exeopt
@@ -77,7 +77,7 @@ You can define some derived metrics based on regular metrics. Simply
 put metric specification under autoperf/utils/metric_spec/ directory::
 
   $ cat ../../autoperf/utils/metric_spec/FP_INEFFICIENT2
-  ((PAPI_FP_INS/PAPI_TOT_INS )*(PAPI_RES_STL/PAPI_TOT_CYC))*(PAPI_TOT_CYC/META_CPU_HZ)
+  ((PAPI_FP_INS/PAPI_TOT_INS)*(PAPI_RES_STL/PAPI_TOT_CYC))*(PAPI_TOT_CYC/META_CPU_HZ)
 
 Then you can use them as normal metrics::
 

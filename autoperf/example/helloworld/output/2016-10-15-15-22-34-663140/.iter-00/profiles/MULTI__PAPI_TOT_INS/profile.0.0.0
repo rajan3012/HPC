@@ -1,4 +1,0 @@
-1 templated_functions_MULTI_PAPI_TOT_INS
-# Name Calls Subrs Excl Incl ProfileCalls # <metadata><attribute><name>Metric Name</name><value>PAPI_TOT_INS</value></attribute></metadata>
-".TAU application" 1 0 20695 20695 0 GROUP="TAU_USER" 
-0 aggregates

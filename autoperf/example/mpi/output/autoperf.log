@@ -11,14 +11,16 @@
 # LogLevel : DEBUG
 # Queue    : PBS
 # 
-# Using TAU binding: papi,pdt,mpi
-# Run the experiment
-function run-2016-10-15-17-04-58-415091 () {
-    cd /home/rsawhney/Desktop/HPC/autoperf/example/mpi/output
-
-    # Nothing to link, bypass
-
-    # Nothing to copy, bypass
-
-    # No builder found, bypass
-
+# ********** EXPERIMENT START **********
+# 
+# Name     : pi
+# Platform : aciss
+# Tool     : tau
+# Analyses : ['metrics']
+# Rootdir  : /home/rsawhney/Desktop/HPC/autoperf/example/mpi/output
+# MPI      : True
+# CUPTI    : False
+# Instance : None
+# LogLevel : DEBUG
+# Queue    : PBS
+# 
