@@ -1,0 +1,3 @@
+Reserve a node for interactive use.
+qsub -q generic -I
+
