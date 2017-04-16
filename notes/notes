@@ -13,9 +13,6 @@ make install
 export TAU_MAKEFILE=/home/rsawhney/Desktop/HPC/tau-2.25.1/x86_64/lib/Makefile.tau-papi-pdt-openmp
 
 
-raJANgitHUB9158
-
-
 gcc -g /home/rsawhney/Desktop/HPC/sample.c -o sampleres
 tau_exec ./sampleres
 
